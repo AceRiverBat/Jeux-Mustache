@@ -1,0 +1,71 @@
+body{
+    background-image: url("img/welcome.png");
+    background-repeat: none;
+    background-size: 100%;
+}
+
+.bganimation{animation: defile 15s infinite linear;}
+@keyframes defile {
+    from {background-position: 1920px 0px;}
+    to {background-position: -1920px 0px;}
+    }
+
+h1{
+    color: white;
+    margin-left: 25% !important;
+    margin-top: 20% !important;
+    font-size: 4em !important;
+}
+
+.btn{
+    margin-left: 45% !important;
+    margin-top: 1em !important;
+    font-size: 3em !important;
+}
+
+.btn:hover{
+    opacity: 0.75 !important;
+}
+
+h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#score{
+        color: white;
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+}
+
+#perso{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 490px;
+    left: 400px;
+}
+
+#rat{
+    position: absolute;
+    top: 530px;
+    left: 90%;
+    width: 50px;
+    height: 25px;
+    animation: rat 4s infinite linear;
+}
+@keyframes rat{
+    0%{left: 1150px;}
+    100%{left: -650px;}
+}
+
+.animate{animation: jump 500ms ;}
+@keyframes jump{
+    0%{top: 455px;}
+    30%{top: 400px;}
+    70%{top: 400px;}
+    100%{top: 455px;}
+}
+
