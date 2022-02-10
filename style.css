@@ -9,7 +9,7 @@ body{
     from {background-position: 1920px 0px;}
     to {background-position: -1920px 0px;}
     };
-    
+
 img, svg {
     vertical-align: middle;
     width: 5em !important;
@@ -46,8 +46,8 @@ h2{
 }
 
 #perso{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: 490px;
     left: 400px;
@@ -57,8 +57,8 @@ h2{
     position: absolute;
     top: 530px;
     left: 90%;
-    width: 50px;
-    height: 25px;
+    width: 60px;
+    height: 35px;
     animation: rat 4s infinite linear;
 }
 @keyframes rat{

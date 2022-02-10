@@ -6,6 +6,7 @@ alertgo.style.display="none";
 let alertGG = document.getElementById("alertGG");
 alertGG.style.display = "none";
 
+
 body.classList.add("bganimation");
 
 //score
@@ -14,6 +15,7 @@ const X = Math.ceil((100*1000)/50);
 let scoreElem = document.getElementById("score");
 function count(){
   scoreElem.innerHTML = ++score;
+  
   if(score<50){
     setTimeout(count, X);
   }
@@ -85,7 +87,7 @@ class joueur{
     const node = document.createElement("p");
     const textnode = document.createTextNode(player + " ton score est de " + score + "  Sale noob !!!");
     node.appendChild(textnode);
-    document.getElementById("loose").appendChild(node);
+    document.getElementById("lose").appendChild(node);
   }
 
   gg(player){
@@ -99,14 +101,16 @@ class joueur{
 }
 
 //perdu
+function deadNow(){
 let dead = setInterval(function(){
 let persoTop = parseInt(window.getComputedStyle(perso).getPropertyValue("top"));
 let ratLeft = parseInt(window.getComputedStyle(rat).getPropertyValue("left"));
 if (ratLeft < 400 && ratLeft > 350 && persoTop >= 455) {
-window.clearTimeout(count, X);
+
+  perso.src = `img/dead.png`;
   rat.style.animation = "none";
   rat.style.display = "none";
-  perso.src = `img/dead.png`;
+ 
   body.classList.remove("bganimation");
 
 //recup score et nom joueur
@@ -114,10 +118,11 @@ window.clearTimeout(count, X);
   let tempsperdu = new joueur(pseudo, score);
   tempsperdu.perdu(pseudo);
 
+  let chrono = document.getElementById("chrono");
+  chrono.style.display = "none";
+  
 }
 }, 10);
 
-
-
-
- 
+}
+deadNow();
