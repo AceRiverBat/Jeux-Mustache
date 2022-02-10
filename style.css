@@ -8,7 +8,12 @@ body{
 @keyframes defile {
     from {background-position: 1920px 0px;}
     to {background-position: -1920px 0px;}
-    }
+    };
+    
+img, svg {
+    vertical-align: middle;
+    width: 5em !important;
+  }
 
 h1{
     color: white;
@@ -17,7 +22,7 @@ h1{
     font-size: 4em !important;
 }
 
-.btn{
+#btn1{
     margin-left: 45% !important;
     margin-top: 1em !important;
     font-size: 3em !important;
@@ -69,3 +74,22 @@ h2{
     100%{top: 455px;}
 }
 
+.btn-secondary{
+    color: #fff;
+    background-color: #19182F !important;
+    border-color: #19182F !important;
+  }
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #12273B !important;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+    color: white !important;
+  }
