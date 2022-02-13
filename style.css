@@ -93,3 +93,36 @@ h2{
     outline: 0;
     color: white !important;
   }
+
+
+/* mediaqueries */
+@media screen and (max-width: 640px) {
+    #perso{
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 490px;
+        left: 400px;
+    }
+    
+    #rat{
+        position: absolute;
+        top: 530px;
+        left: 90%;
+        width: 60px;
+        height: 35px;
+        animation: rat 4s infinite linear;
+    }
+    @keyframes rat{
+        0%{left: 1150px;}
+        100%{left: -650px;}
+    }
+    
+    .animate{animation: jump 500ms ;}
+    @keyframes jump{
+        0%{top: 455px;}
+        30%{top: 400px;}
+        70%{top: 400px;}
+        100%{top: 455px;}
+    }
+  }
