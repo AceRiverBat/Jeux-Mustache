@@ -1,3 +1,4 @@
+//initialisation des variables
 let body = document.querySelector("body");
 let perso = document.getElementById("perso");
 let rat = document.getElementById("rat");
@@ -6,7 +7,7 @@ alertgo.style.display = "none";
 let alertGG = document.getElementById("alertGG");
 alertGG.style.display = "none";
 
-
+//ajoute l'animation au background du body
 body.classList.add("bganimation");
 
 //score
@@ -15,10 +16,11 @@ const X = Math.ceil((100 * 1000) / 50);
 let scoreElem = document.getElementById("score");
 function count() {
   scoreElem.innerHTML = ++score;
-
+  //tant que le score est inférieur à 50 il continuera d'augmenter de +1
   if (score < 50) {
     setTimeout(count, X);
   }
+  //quand le score est égal à 50 le joueur a gagné apparition du module correspondant
   if (score == 50) {
 
     rat.style.animation = "none";
@@ -62,7 +64,7 @@ function level() {
   }
 };
 
-//animation jump
+//animation jump lorsque la barre espace est enfoncée
 document.addEventListener('keydown', function (jump) {
   if (jump.code === 'Space') {
     perso.classList.add("animate");
@@ -75,13 +77,13 @@ document.addEventListener('keydown', function (jump) {
   }
 });
 
-//personnalisation du joueur
+//personnalisation du joueur, récupération du nom et du score du joueur
 class joueur {
   constructor(nom, score) {
     this.nom = nom;
     this.score = score;
   }
-
+  //le joueur a perdu, appartition du module game over
   perdu(player) {
     alertgo.style.display = "block";
     const node = document.createElement("p");
@@ -89,7 +91,7 @@ class joueur {
     node.appendChild(textnode);
     document.getElementById("lose").appendChild(node);
   }
-
+  //le joueur a gagné, apparition du module gg (bien joué)
   gg(player) {
     alertGG.style.display = "block";
     const nodegg = document.createElement("p");
@@ -100,17 +102,19 @@ class joueur {
   }
 }
 
-//perdu
+//détection de la colision entre le personnage et le rat
 function deadNow() {
   let dead = setInterval(function () {
+    //récupération de la position du personnage et du rat
     let persoTop = parseInt(window.getComputedStyle(perso).getPropertyValue("top"));
     let ratLeft = parseInt(window.getComputedStyle(rat).getPropertyValue("left"));
+    //si il y a colision alors changer image du personnage et faire disparaitre le rat
     if (ratLeft < 400 && ratLeft > 350 && persoTop >= 455) {
 
       perso.src = `img/dead.png`;
       rat.style.animation = "none";
       rat.style.display = "none";
-
+      //stopper animation du background de body
       body.classList.remove("bganimation");
 
       //recup score et nom joueur
@@ -118,9 +122,11 @@ function deadNow() {
       let tempsperdu = new joueur(pseudo, score);
       tempsperdu.perdu(pseudo);
 
+      //le chrono disparait
       let chrono = document.getElementById("chrono");
       chrono.style.display = "none";
 
+      //TEST LOCALSTORAGE : 
       // function storage() {
       //   localStorage.setItem("pseudo", pseudo);
       //   localStorage.setItem("score", score);
