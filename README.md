@@ -11,9 +11,10 @@
 
  La maquette du jeux : 
 
- ![](/img/run.png)
- ![alt text](http://url/to/run.png)
- ![alt text](http://url/to/run.png)
+ ![](/Maquette/1.png)
+ ![](/Maquette/2.png)
+ ![](/Maquette/3.png)
+ ![](/Maquette/4.png)
 
 
 
