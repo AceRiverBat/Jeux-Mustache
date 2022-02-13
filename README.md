@@ -6,10 +6,12 @@
  J'ai utilisé du JavaScript, du HTML, du CSS et un peu de bootstrap pour réaliser ce jeux.
 
  Tester le jeux : 
+ 
+ https://mustache-game.netlify.app/
 
  La maquette du jeux : 
 
- ![alt text](http://url/to/run.png)
+ ![](/img/run.png)
  ![alt text](http://url/to/run.png)
  ![alt text](http://url/to/run.png)
 
